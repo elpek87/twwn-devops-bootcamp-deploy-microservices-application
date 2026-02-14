@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.appName }}
-        image: "{{ .Values.appImage }}:{{ .Values.appVersion }}"
+        image: "{{ .Values.appName }}:{{ .Values.appVersion }}"
         ports:
         - containerPort: {{ .Values.containerPort }}
         livenessProbe:
@@ -28,7 +28,7 @@ spec:
             port: {{ .Values.containerPort }}
           periodSeconds: 5
         resources:
-          requests: 
+          requests:
             cpu: 70m
             memory: 200Mi
           limits:
